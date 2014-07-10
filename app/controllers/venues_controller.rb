@@ -6,6 +6,12 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @visitors = @venue.visitors.last(30)
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @visitors.to_json }
+    end
   end
 
   def new
