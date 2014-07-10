@@ -1,6 +1,28 @@
+<style>#venue {visibility: hidden;}</style>
 <h1><%= @venue.name %> Visitors Over Time</h1>
 <h5><%= @venue.city %>, <%= @venue.state %></h5>
 
-<% @venue.visitors.each do |checkin| %>
-  <p><%= checkin.current_visitors %> people were here at: <%= checkin.created_at.strftime("%a, %b %m, %Y at %I:%M %P") %></p>
-<% end %>
+<hr>
+<canvas id="myChart" width="800" height="400"></canvas>
+<hr>
+
+<table border="1" style="width:500px">
+  <tr>
+    <td>Day</td>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Visitors</td>
+  </tr>
+  <% @visitors.each do |checkin| %>
+    <tr>
+      <td><%= checkin.created_at.strftime "%a" %></td>
+      <td><%= checkin.created_at.strftime "%b %m, %Y" %></td>
+      <td><%= checkin.created_at.strftime "%I:%M %P" %></td>
+      <td><%= checkin.current_visitors %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="visitor-data">
+  <%= @visitors.to_json %>
+</div>
