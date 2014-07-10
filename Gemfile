@@ -21,3 +21,4 @@ group :development, :test do
 end
 gem 'httparty'
 gem 'figaro'
+gem 'whenever'
