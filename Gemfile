@@ -22,3 +22,4 @@ end
 gem 'httparty'
 gem 'figaro'
 gem 'whenever', :require => false
+ruby '2.1.0'
