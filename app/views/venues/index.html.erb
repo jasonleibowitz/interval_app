@@ -1,0 +1,10 @@
+<h1>Venue Index Page</h1>
+
+<h4>Add a Venue</h4>
+<%= render "search" %>
+
+<ul>
+<% @venues.each do |venue| %>
+  <li><%= link_to venue.name, venue_path(venue) %></li>
+<% end %>
+</ul>

@@ -1,0 +1,7 @@
+<h1>search page</h1>
+<% @results["response"]["groups"].first["items"].each do |result| %>
+<ul>
+  <li><%= result["venue"]["name"] %> - <%= button_to("Add", {controller: "venues", action: "create", name: result["venue"]["name"], foursquare_id: result["venue"]["id"], address: result["venue"]["location"]["address"], lat: result["venue"]["location"]["lat"], lon: result["venue"]["location"]["lng"], city: result["venue"]["location"]["city"], state: result["venue"]["location"]["state"] }) %></li>
+
+</ul>
+<% end %>
