@@ -21,4 +21,4 @@ group :development, :test do
 end
 gem 'httparty'
 gem 'figaro'
-gem 'whenever'
+gem 'whenever', :require => false
