@@ -1,2 +1,6 @@
-<h1><%= @venue.name %></h1>
-<p><%= @venue.address %></p>
+<h1><%= @venue.name %> Visitors Over Time</h1>
+<h5><%= @venue.city %>, <%= @venue.state %></h5>
+
+<% @venue.visitors.each do |checkin| %>
+  <p><%= checkin.current_visitors %> people were here at: <%= checkin.created_at.strftime("%a, %b %m, %Y at %I:%M %P") %></p>
+<% end %>
