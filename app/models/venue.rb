@@ -3,7 +3,10 @@ class Venue < ActiveRecord::Base
 
   def current_visitors
     @visitors = Foursquare.find_current_visitors(self.foursquare_id)
-    Visitor.create(current_visitors: @visitors, venue_id: self.id)
+    @current_visitors = Visitor.new(current_visitors: @visitors, venue_id: self.id)
+    @current_visitors.js_time = self.created_at.strftime "%-m/%-d/%Y"
+    @current_visitors.save!
   end
 
 end
+
