@@ -22,4 +22,5 @@ end
 gem 'httparty'
 gem 'figaro'
 gem 'whenever', :require => false
+gem 'rails_12factor'
 ruby '2.1.0'
