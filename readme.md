@@ -6,6 +6,8 @@ This is a web app I built to complete the Hackerati [Full-Stack coding challenge
 
 The assignment was to built a system to collect data that is generated on an interval (once a minute/hour/day/etc). Store in a database; record time and data value. Then build a web app that displays a graph of the collected data with your choice of intervals. Add a table report of the data with column headings. The table should be placed below the graph. 
 
+The app automatically runs a rake task using Heroku scheduler to update how many people are currently checked in to all saved venues by using the Foursquare API. This update is run everyday at 12pm EST. Venue search is limited to NYC-area. 
+
 ### Links
 
 * [Hosted App on Heroku](http://boiling-sierra-7303.herokuapp.com/)
