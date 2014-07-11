@@ -23,4 +23,5 @@ gem 'httparty'
 gem 'figaro'
 gem 'whenever', :require => false
 gem 'rails_12factor'
+gem 'foundation-rails'
 ruby '2.1.0'

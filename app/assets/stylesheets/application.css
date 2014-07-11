@@ -12,8 +12,19 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
 
+
 #visitor-data {
+  visibility: hidden;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+#venue {
   visibility: hidden;
 }
