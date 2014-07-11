@@ -1,10 +1,31 @@
-<h1>Venue Index Page</h1>
+<div class="row">
+  <div class="small-8 small-centered columns centered-text">
+    <h1>Venue Index Page</h1>
+  </div>
+</div>
 
-<h4>Add a Venue</h4>
-<%= render "search" %>
+<div class="row">
+  <div class="small-8 columns">
+    <h4>Add a Venue</h4>
+    <%= render "search" %>
+  </div>
+</div>
 
-<ul>
-<% @venues.each do |venue| %>
-  <li><%= link_to venue.name, venue_path(venue) %></li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="small-10 small-centered columns centered-text">
+    <h4>Venues Currently Being Tracked</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-8 small-offset-1 columns">
+  <ul>
+    <% @venues.each do |venue| %>
+      <li><%= link_to venue.name, venue_path(venue) %></li>
+    <% end %>
+  </ul>
+  </div>
+</div>
+
+
+

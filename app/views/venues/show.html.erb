@@ -1,27 +1,51 @@
-<style>#venue {visibility: hidden;}</style>
-<h1><%= @venue.name %> Visitors Over Time</h1>
-<h5><%= @venue.city %>, <%= @venue.state %></h5>
+<div class="row">
+  <div class="small-10 small-centered columns centered-text">
+    <h1><%= @venue.name %> Visitors Over Time</h1>
+    <h5><%= @venue.address %>, <%= @venue.city %>, <%= @venue.state %></h5>
+  </div>
+</div>
 
-<hr>
-<canvas id="myChart" width="800" height="400"></canvas>
-<hr>
+<div class="row">
+  <div class="small-12 small-centered columns">
+    <hr>
+  </div>
+</div>
 
-<table border="1" style="width:500px">
-  <tr>
-    <td>Day</td>
-    <td>Date</td>
-    <td>Time</td>
-    <td>Visitors</td>
-  </tr>
-  <% @visitors.each do |checkin| %>
-    <tr>
-      <td><%= checkin.created_at.strftime "%a" %></td>
-      <td><%= checkin.created_at.strftime "%b %m, %Y" %></td>
-      <td><%= checkin.created_at.strftime "%I:%M %P" %></td>
-      <td><%= checkin.current_visitors %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <canvas id="myChart" width="800" height="400"></canvas>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 small-centered columns">
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <h3>Data Points</h3>
+    <table border="1" style="width:500px">
+      <tr>
+        <td>Day</td>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Visitors</td>
+      </tr>
+      <% @visitors.each do |checkin| %>
+        <tr>
+          <td><%= checkin.created_at.strftime "%a" %></td>
+          <td><%= checkin.created_at.strftime "%b %e, %Y" %></td>
+          <td><%= checkin.created_at.strftime "%I:%M %P" %></td>
+          <td><%= checkin.current_visitors %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+
 
 <div id="visitor-data">
   <%= @visitors.to_json %>
